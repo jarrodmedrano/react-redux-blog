@@ -35,8 +35,8 @@ export function createPost(props) {
 export function deletePost(id) {
   const request = axios.delete(`${ROOT_URL}/posts/${id}${API_KEY}`);
 
-  return (
+  return {
     type: DELETE_POST,
     payload: request
-  );
+  }
 }
