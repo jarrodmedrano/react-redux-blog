@@ -9,8 +9,16 @@ class PostsShow extends Component {
   }
 
   render() {
+    if(!this.props.post) {
+      return <div>Loading...</div>
+    }
+
     return <div>Show Post {this.props.params.id}</div>
   }
 }
 
-export default connect(null, {fetchPost})(PostsShow);
+function mapStateToProps(state) {
+  return { post: state.posts.post };
+}
+
+export default connect(mapStateToProps, {fetchPost})(PostsShow);
