@@ -86,7 +86,7 @@
 	_reactDom2.default.render(_react2.default.createElement(
 	  _reactRedux.Provider,
 	  { store: createStoreWithMiddleware(_reducers2.default) },
-	  _react2.default.createElement(_reactRouter.Router, { history: _reactRouter.browserHistory, routes: _routes2.default })
+	  _react2.default.createElement(_reactRouter.Router, { history: _reactRouter.hashHistory, routes: _routes2.default })
 	), document.querySelector('.container'));
 
 /***/ }),
@@ -28400,14 +28400,19 @@
 	            _reactRouter.Link,
 	            { to: "posts/" + post.id },
 	            _react2.default.createElement(
-	              'span',
-	              { className: 'pull-xs-right' },
-	              post.categories
+	              'div',
+	              null,
+	              _react2.default.createElement(
+	                'strong',
+	                null,
+	                post.title
+	              )
 	            ),
 	            _react2.default.createElement(
-	              'strong',
+	              'div',
 	              null,
-	              post.title
+	              'in category ',
+	              post.categories
 	            )
 	          )
 	        );
@@ -29751,7 +29756,7 @@
 	function validate(values) {
 	  var errors = {};
 	  if (!values.title) {
-	    errors.title = 'Enter a username';
+	    errors.title = 'Enter a title';
 	  }
 	  if (!values.categories) {
 	    errors.categories = 'Enter a category';
