@@ -28334,7 +28334,7 @@
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'div',
-	        null,
+	        { className: 'my-3' },
 	        this.props.children
 	      );
 	    }
@@ -28426,7 +28426,7 @@
 	        null,
 	        _react2.default.createElement(
 	          'div',
-	          { className: 'text-xs-right' },
+	          { className: 'text-xs-right mb-3' },
 	          _react2.default.createElement(
 	            _reactRouter.Link,
 	            { to: '/posts/new', className: 'btn btn-primary' },
